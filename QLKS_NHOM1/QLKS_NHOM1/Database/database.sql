@@ -19,7 +19,7 @@ GO
 ----Tạo Bảng Loại Phòng--------
 CREATE	TABLE RoomType
 (
-	id INT IDENTITY PRIMARY KEY,
+	RoomTypeId INT IDENTITY PRIMARY KEY,
 	NameType nvarchar(100) NOT NULL,
 	Price INT NOT NULL,
 )
@@ -28,18 +28,18 @@ GO
 --Tạo Bảng Phòng------
 CREATE TABLE Room
 (
-	id INT IDENTITY PRIMARY KEY,
+	RoomId INT IDENTITY PRIMARY KEY,
 	NameRoom nvarchar(100) NOT NULL,
 	Status int NOT NULL,
-	idRoomType INT NOT NULL,
-	FOREIGN KEY(idRoomType) REFERENCES RoomType (id)
+	RoomTypeId INT NOT NULL,
+	FOREIGN KEY(RoomTypeId) REFERENCES RoomType (RoomTypeId)
 )
 GO
 
 -------Tạo Bảng Dịch Vụ---------
 CREATE TABLE Service
 (
-	id INT IDENTITY PRIMARY KEY,
+	ServiceId INT IDENTITY PRIMARY KEY,
 	NameService nvarchar(100) NOT NULL,
 	Price int NOT NULL,
 )
@@ -48,12 +48,12 @@ GO
 -------------Tạo bảng Khách hàng--------
 CREATE TABLE Customer
 (
-	id INT IDENTITY PRIMARY KEY,
+	CustomerId INT IDENTITY PRIMARY KEY,
 	NameCustomer nvarchar(100) NOT NULL,
 	DateTimeCustomer Date NOT NULL,
 	GenderCustomer nvarchar(3) NOT NULL,
 	AddressCustomer nvarchar(100),
-	idCardCustomer nchar(15) NOT NULL,
+	IdCardCustomer nchar(15) NOT NULL,
 	PhoneNumber Nchar(10)
 )
 GO
@@ -61,25 +61,25 @@ GO
 -----Tạo Bảng Bill-----
 CREATE TABLE Bill
 (
-	id INT IDENTITY PRIMARY KEY,
-	idCustomer int NOT NULL,
+	BillId INT IDENTITY PRIMARY KEY,
+	CustomerId int NOT NULL,
 	DateCheckIn Date NOT NULL DEFAULT GETDATE(),
 	DateCheckOut Date ,
-	idRoom int NOT NULL,
+	RoomId int NOT NULL,
 	Status int NOT NULL, ------1: Đã Thanh Toán, 0: Chưa Thanh Toán.
-	FOREIGN KEY (idRoom) REFERENCES Room(id),
-	FOREIGN KEY (idCustomer) REFERENCES Customer(id),
+	FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId),
+	FOREIGN KEY (RoomId) REFERENCES Room(RoomId),
 )
 GO
 ----Tạo Bảng BillInfo-------
 CREATE TABLE BillInfo
 (
-	id INT IDENTITY PRIMARY KEY,
-	idBill int NOT NULL,
-	idService int NOT NULL,
-	intCount INT NOT NULL,
+	BillInfoId INT IDENTITY PRIMARY KEY,
+	BillId int NOT NULL,
+	ServiceId int NOT NULL,
+	IntCount INT NOT NULL,
 	DateService DATE NOT NULL DEFAULT GETDATE(),
-	FOREIGN KEY (idBill) REFERENCES Bill (id),
-	FOREIGN KEY (idService) REFERENCES Service (id)
+	FOREIGN KEY (BillId) REFERENCES Bill (BillId),
+	FOREIGN KEY (ServiceId) REFERENCES Service (ServiceId)
 )
 GO

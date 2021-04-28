@@ -25,20 +25,20 @@ END
 GO
 
 CREATE PROCEDURE SP_Customer_Delete
-  @id INT
+  @CustomerId INT
 AS
 BEGIN
   UPDATE Bill
-  SET idCustomer = NULL
-  WHERE idCustomer = @id
+  SET CustomerId = NULL
+  WHERE CustomerId = @CustomerId
 
   DELETE Customer
-  WHERE id = @id
+  WHERE CustomerId = @CustomerId
 END
 GO
 
 CREATE PROCEDURE SP_Customer_Update
-  @id INT,
+  @CustomerId INT,
   @NameCustomer NVARCHAR(100),
   @DateTimeCustomer DATE,
   @GenderCustomer NVARCHAR(3),
@@ -54,7 +54,7 @@ BEGIN
 	  AddressCustomer = @AddressCustomer,
 	  idCardCustomer = @idCardCustomer,
 	  PhoneNumber = @PhoneNumber
-  WHERE id = @id
+  WHERE CustomerId = @CustomerId
 END
 GO
 
@@ -64,7 +64,7 @@ AS
 BEGIN
   SELECT *
   FROM Customer
-  WHERE id LIKE N'%' + @searchValue + '%'
+  WHERE CustomerId LIKE N'%' + @searchValue + '%'
     OR  NameCustomer LIKE N'%' + @searchValue + '%'
     OR  DateTimeCustomer LIKE N'%' + @searchValue + '%'
     OR  GenderCustomer LIKE N'%' + @searchValue + '%'
