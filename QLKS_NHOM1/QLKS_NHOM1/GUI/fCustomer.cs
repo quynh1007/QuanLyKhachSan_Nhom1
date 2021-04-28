@@ -54,5 +54,19 @@ namespace QLKS_NHOM1.GUI
             CustomerList.DataSource = CustomerDAO.Instance.GetAll();
         }
 
+        private void btnLamTrong_Click(object sender, EventArgs e)
+        {
+            txtHoTen.Text = "";
+            dtNgayDat.Value = DateTime.Now;
+            cbGioiTinh.Text = "";
+            txtDiaChi.Text = "";
+            txtCCCD.Text = "";
+            txtSDT.Text = "";
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadListCustomer();
+        }
     }
 }

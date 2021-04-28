@@ -30,6 +30,8 @@
         {
             this.lb1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.dtNgayDat = new System.Windows.Forms.DateTimePicker();
             this.btnLamTrong = new System.Windows.Forms.Button();
             this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dtNgayDat = new System.Windows.Forms.DateTimePicker();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -89,6 +89,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
             // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(356, 117);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(135, 22);
+            this.txtSDT.TabIndex = 13;
+            // 
+            // dtNgayDat
+            // 
+            this.dtNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayDat.Location = new System.Drawing.Point(91, 76);
+            this.dtNgayDat.Name = "dtNgayDat";
+            this.dtNgayDat.Size = new System.Drawing.Size(135, 22);
+            this.dtNgayDat.TabIndex = 12;
+            // 
             // btnLamTrong
             // 
             this.btnLamTrong.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,6 +113,7 @@
             this.btnLamTrong.TabIndex = 4;
             this.btnLamTrong.Text = "Làm Trống";
             this.btnLamTrong.UseVisualStyleBackColor = true;
+            this.btnLamTrong.Click += new System.EventHandler(this.btnLamTrong_Click);
             // 
             // cbGioiTinh
             // 
@@ -236,6 +252,7 @@
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnXoa
             // 
@@ -266,21 +283,6 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // dtNgayDat
-            // 
-            this.dtNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayDat.Location = new System.Drawing.Point(91, 76);
-            this.dtNgayDat.Name = "dtNgayDat";
-            this.dtNgayDat.Size = new System.Drawing.Size(135, 22);
-            this.dtNgayDat.TabIndex = 12;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(356, 117);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(135, 22);
-            this.txtSDT.TabIndex = 13;
             // 
             // dgvCustomer
             // 
