@@ -68,5 +68,106 @@ namespace QLKS_NHOM1.GUI
         {
             LoadListCustomer();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            string NameCustomer = txtHoTen.Text;
+            DateTime DateTimeCustomer;
+            DateTime.TryParse(dtNgayDat.Text, out DateTimeCustomer);
+            string GenderCustomer = cbGioiTinh.Text;
+            string AddressCustomer = txtDiaChi.Text;
+            string IdCardCustomer = txtCCCD.Text;
+            string PhoneNumber = txtSDT.Text;
+
+            try
+            {
+                if (NameCustomer == "" || DateTimeCustomer == null || GenderCustomer == "" || AddressCustomer == "" || IdCardCustomer == "" || PhoneNumber == "")
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    return;
+                }
+                else if (MessageBox.Show("Bạn có thật sự muốn thêm khách hàng này!", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    CustomerDAO.Instance.Insert(NameCustomer, DateTimeCustomer, GenderCustomer, AddressCustomer, IdCardCustomer, PhoneNumber);
+                    MessageBox.Show("Thêm thành công");
+                    LoadData();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Có lỗi xảy ra" + err.ToString());
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            int row = dgvCustomer.CurrentCell.RowIndex;
+            int CustomerId;
+            Int32.TryParse(dgvCustomer.Rows[row].Cells[0].Value.ToString().Trim(), out CustomerId);
+            string NameCustomer = txtHoTen.Text;
+            DateTime DateTimeCustomer;
+            DateTime.TryParse(dtNgayDat.Text, out DateTimeCustomer);
+            string GenderCustomer = cbGioiTinh.Text;
+            string AddressCustomer = txtDiaChi.Text;
+            string IdCardCustomer = txtCCCD.Text;
+            string PhoneNumber = txtSDT.Text;
+
+            try
+            {
+                if (NameCustomer == "" || DateTimeCustomer == null || GenderCustomer == "" || AddressCustomer == "" || IdCardCustomer == "" || PhoneNumber == "")
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    return;
+                }
+                else if (MessageBox.Show("Bạn có thật sự muốn sửa khách hàng này!", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    CustomerDAO.Instance.Update(CustomerId, NameCustomer, DateTimeCustomer, GenderCustomer, AddressCustomer, IdCardCustomer, PhoneNumber);
+                    MessageBox.Show("Cập nhật thành công");
+                    LoadData();
+                }
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Có lỗi xảy ra" + err.ToString());
+                LoadData();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int row = dgvCustomer.CurrentCell.RowIndex;
+            int CustomerId;
+            Int32.TryParse(dgvCustomer.Rows[row].Cells[0].Value.ToString().Trim(), out CustomerId);
+            try
+            {
+                if (MessageBox.Show("Bạn có thật sự muốn xoá khách hàng này!", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    CustomerDAO.Instance.Delete(CustomerId);
+                    MessageBox.Show("Xóa thành công!");
+                    LoadData();
+                }
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Có lỗi xảy ra" + err.ToString());
+                LoadData();
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string search = txtTimKiem.Text.Trim();
+            if (search.Equals(""))
+            {
+                MessageBox.Show("Mời bạn nhập thông tin tìm kiếm!");
+                return;
+            }
+            else
+            {
+                CustomerList.DataSource = CustomerDAO.Instance.Search(search);
+            }
+        }
     }
 }
