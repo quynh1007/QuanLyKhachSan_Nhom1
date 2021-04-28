@@ -9,12 +9,12 @@ namespace QLKS_NHOM1.Models
 {
     class Bill
     {
-        public int id { set; get; }
-        public int idCustomer { set; get; }
+        public int BillId { set; get; }
+        public int CustomerId { set; get; }
         public DateTime DateCheckIn { set; get; }
 
         public DateTime DateCheckOut { set; get; }
-        public int idRoom { set; get; }
+        public int RoomId { set; get; }
 
         public int Status { set; get; }
 
@@ -22,11 +22,11 @@ namespace QLKS_NHOM1.Models
         public Bill() { }
         public Bill(DataRow dataRow)
         {
-            this.id = Int32.Parse(dataRow["id"].ToString());
-            this.idCustomer = Int32.Parse(dataRow["idCustomer"].ToString());
+            this.BillId = Int32.Parse(dataRow["BillId"].ToString());
+            this.CustomerId = Int32.Parse(dataRow["CustomerId"].ToString());
             this.DateCheckIn = DateTime.Parse(dataRow["DateCheckIn"].ToString());
             this.DateCheckOut = DateTime.Parse(dataRow["DateCheckOut"].ToString());
-            this.idRoom = Int32.Parse(dataRow["idRoom"].ToString());
+            this.RoomId = Int32.Parse(dataRow["RoomId"].ToString());
             this.Status = Int32.Parse(dataRow["Status"].ToString());
            
             

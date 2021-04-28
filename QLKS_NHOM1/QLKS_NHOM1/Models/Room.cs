@@ -9,20 +9,20 @@ namespace QLKS_NHOM1.Models
 {
     class Room
     {
-        public int id { set; get; }
+        public int RoomId { set; get; }
         public string NameRoom { set; get; }
      
         public int Status { set; get; }
        
-        public int idRoomType { set; get; }
+        public int RoomTypeId { set; get; }
       
         public Room() { }
         public Room(DataRow dataRow)
         {
-            this.id = Int32.Parse(dataRow["id"].ToString());
+            this.RoomId = Int32.Parse(dataRow["RoomId"].ToString());
             this.NameRoom = dataRow["NameRoom"].ToString();
             this.Status = Int32.Parse(dataRow["Status"].ToString());
-            this.idRoomType = Int32.Parse(dataRow["idRoomType"].ToString());
+            this.RoomTypeId = Int32.Parse(dataRow["RoomTypeId"].ToString());
         }
     }
 }
