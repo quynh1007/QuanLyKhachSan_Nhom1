@@ -98,7 +98,7 @@
   <ItemGroup>
     <Content Include="Database\Data.sql" />
     <Content Include="Database\database.sql" />
-    <Content Include="Database\imagedb.PNG" />
+    <Content Include="Database\diagram.PNG" />
     <Content Include="Database\StoreProcedure.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
