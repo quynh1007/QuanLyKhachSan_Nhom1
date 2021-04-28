@@ -21,5 +21,13 @@ namespace QLKS_NHOM1.GUI
         {
 
         }
+
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fCustomer frm = new fCustomer();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }
