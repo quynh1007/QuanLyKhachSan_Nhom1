@@ -39,65 +39,69 @@ namespace QLKS_NHOM1.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvRoomTyoe = new System.Windows.Forms.DataGridView();
+            this.dgvRoomType = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomTyoe)).BeginInit();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomType)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(437, 71);
+            this.btnThem.Location = new System.Drawing.Point(626, 71);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(595, 71);
+            this.btnXoa.Location = new System.Drawing.Point(787, 71);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(437, 127);
+            this.btnSua.Location = new System.Drawing.Point(626, 116);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(595, 176);
+            this.button4.Location = new System.Drawing.Point(787, 176);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "Tìm kiếm";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtRoomTypeId
             // 
-            this.txtRoomTypeId.Location = new System.Drawing.Point(130, 49);
+            this.txtRoomTypeId.Location = new System.Drawing.Point(130, 74);
             this.txtRoomTypeId.Name = "txtRoomTypeId";
             this.txtRoomTypeId.Size = new System.Drawing.Size(100, 20);
             this.txtRoomTypeId.TabIndex = 4;
             // 
             // txtNameType
             // 
-            this.txtNameType.Location = new System.Drawing.Point(130, 99);
+            this.txtNameType.Location = new System.Drawing.Point(362, 78);
             this.txtNameType.Name = "txtNameType";
             this.txtNameType.Size = new System.Drawing.Size(100, 20);
             this.txtNameType.TabIndex = 5;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(130, 158);
+            this.txtPrice.Location = new System.Drawing.Point(130, 121);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 6;
@@ -105,7 +109,7 @@ namespace QLKS_NHOM1.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 52);
+            this.label1.Location = new System.Drawing.Point(50, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 7;
@@ -114,7 +118,7 @@ namespace QLKS_NHOM1.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 102);
+            this.label2.Location = new System.Drawing.Point(278, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 8;
@@ -123,19 +127,19 @@ namespace QLKS_NHOM1.GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 158);
+            this.label3.Location = new System.Drawing.Point(50, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "GIá";
             // 
-            // dgvRoomTyoe
+            // dgvRoomType
             // 
-            this.dgvRoomTyoe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoomTyoe.Location = new System.Drawing.Point(64, 226);
-            this.dgvRoomTyoe.Name = "dgvRoomTyoe";
-            this.dgvRoomTyoe.Size = new System.Drawing.Size(669, 189);
-            this.dgvRoomTyoe.TabIndex = 10;
+            this.dgvRoomType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoomType.Location = new System.Drawing.Point(64, 226);
+            this.dgvRoomType.Name = "dgvRoomType";
+            this.dgvRoomType.Size = new System.Drawing.Size(877, 280);
+            this.dgvRoomType.TabIndex = 10;
             // 
             // label4
             // 
@@ -147,21 +151,21 @@ namespace QLKS_NHOM1.GUI
             this.label4.TabIndex = 11;
             this.label4.Text = "Quản lý loại phòng";
             // 
-            // textBox4
+            // txtSearch
             // 
-            this.textBox4.Location = new System.Drawing.Point(437, 176);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtSearch.Location = new System.Drawing.Point(626, 178);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 12;
             // 
             // fRoomType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox4);
+            this.ClientSize = new System.Drawing.Size(983, 547);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dgvRoomTyoe);
+            this.Controls.Add(this.dgvRoomType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -174,7 +178,7 @@ namespace QLKS_NHOM1.GUI
             this.Controls.Add(this.btnThem);
             this.Name = "fRoomType";
             this.Text = "fRoomType";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomTyoe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,8 +196,8 @@ namespace QLKS_NHOM1.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvRoomTyoe;
+        private System.Windows.Forms.DataGridView dgvRoomType;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
