@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\RoomTypeDAO.cs" />
     <Compile Include="DataAccessLayer\DataProvider.cs" />
     <Compile Include="GUI\fLogin.cs">
       <SubType>Form</SubType>
