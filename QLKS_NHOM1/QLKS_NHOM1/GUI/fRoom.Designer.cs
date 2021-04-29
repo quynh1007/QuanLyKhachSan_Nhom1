@@ -41,8 +41,8 @@ namespace QLKS_NHOM1.GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRoomId = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNameRoom = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.cbxRoomTypeId = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,7 @@ namespace QLKS_NHOM1.GUI
             this.button4.TabIndex = 27;
             this.button4.Text = "Tìm kiếm";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // button3
             // 
@@ -71,6 +72,7 @@ namespace QLKS_NHOM1.GUI
             this.button3.TabIndex = 26;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button2
             // 
@@ -80,6 +82,7 @@ namespace QLKS_NHOM1.GUI
             this.button2.TabIndex = 25;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnThem
             // 
@@ -89,14 +92,15 @@ namespace QLKS_NHOM1.GUI
             this.btnThem.TabIndex = 24;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvRoom
             // 
             this.dgvRoom.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoom.Location = new System.Drawing.Point(12, 305);
+            this.dgvRoom.Location = new System.Drawing.Point(12, 259);
             this.dgvRoom.Name = "dgvRoom";
-            this.dgvRoom.Size = new System.Drawing.Size(1004, 247);
+            this.dgvRoom.Size = new System.Drawing.Size(1004, 313);
             this.dgvRoom.TabIndex = 23;
             // 
             // label1
@@ -154,19 +158,19 @@ namespace QLKS_NHOM1.GUI
             this.txtRoomId.TabIndex = 34;
             this.txtRoomId.Text = "-1";
             // 
-            // textBox1
+            // txtNameRoom
             // 
-            this.textBox1.Location = new System.Drawing.Point(321, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 35;
+            this.txtNameRoom.Location = new System.Drawing.Point(321, 115);
+            this.txtNameRoom.Name = "txtNameRoom";
+            this.txtNameRoom.Size = new System.Drawing.Size(121, 20);
+            this.txtNameRoom.TabIndex = 35;
             // 
-            // textBox2
+            // txtStatus
             // 
-            this.textBox2.Location = new System.Drawing.Point(121, 185);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 36;
+            this.txtStatus.Location = new System.Drawing.Point(121, 185);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(100, 20);
+            this.txtStatus.TabIndex = 36;
             // 
             // cbxRoomTypeId
             // 
@@ -182,8 +186,8 @@ namespace QLKS_NHOM1.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 594);
             this.Controls.Add(this.cbxRoomTypeId);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.txtNameRoom);
             this.Controls.Add(this.txtRoomId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -198,6 +202,7 @@ namespace QLKS_NHOM1.GUI
             this.Controls.Add(this.dgvRoom);
             this.Name = "fRoom";
             this.Text = "fRoom";
+            this.Load += new System.EventHandler(this.fRoom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,8 +223,8 @@ namespace QLKS_NHOM1.GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label txtRoomId;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNameRoom;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.ComboBox cbxRoomTypeId;
     }
 }

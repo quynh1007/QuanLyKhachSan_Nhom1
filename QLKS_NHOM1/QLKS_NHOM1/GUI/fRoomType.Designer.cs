@@ -33,7 +33,6 @@ namespace QLKS_NHOM1.GUI
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.txtRoomTypeId = new System.Windows.Forms.TextBox();
             this.txtNameType = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace QLKS_NHOM1.GUI
             this.dgvRoomType = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtRoomTypeId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomType)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,13 +84,6 @@ namespace QLKS_NHOM1.GUI
             this.button4.Text = "Tìm kiếm";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // txtRoomTypeId
-            // 
-            this.txtRoomTypeId.Location = new System.Drawing.Point(130, 74);
-            this.txtRoomTypeId.Name = "txtRoomTypeId";
-            this.txtRoomTypeId.Size = new System.Drawing.Size(100, 20);
-            this.txtRoomTypeId.TabIndex = 4;
             // 
             // txtNameType
             // 
@@ -158,11 +151,21 @@ namespace QLKS_NHOM1.GUI
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 12;
             // 
+            // txtRoomTypeId
+            // 
+            this.txtRoomTypeId.AutoSize = true;
+            this.txtRoomTypeId.Location = new System.Drawing.Point(130, 76);
+            this.txtRoomTypeId.Name = "txtRoomTypeId";
+            this.txtRoomTypeId.Size = new System.Drawing.Size(16, 13);
+            this.txtRoomTypeId.TabIndex = 13;
+            this.txtRoomTypeId.Text = "-1";
+            // 
             // fRoomType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 547);
+            this.Controls.Add(this.txtRoomTypeId);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvRoomType);
@@ -171,7 +174,6 @@ namespace QLKS_NHOM1.GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtNameType);
-            this.Controls.Add(this.txtRoomTypeId);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
@@ -190,7 +192,6 @@ namespace QLKS_NHOM1.GUI
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox txtRoomTypeId;
         private System.Windows.Forms.TextBox txtNameType;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label1;
@@ -199,5 +200,6 @@ namespace QLKS_NHOM1.GUI
         private System.Windows.Forms.DataGridView dgvRoomType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label txtRoomTypeId;
     }
 }
