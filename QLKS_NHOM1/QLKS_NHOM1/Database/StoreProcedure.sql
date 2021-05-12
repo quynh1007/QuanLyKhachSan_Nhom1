@@ -119,3 +119,58 @@ BEGIN
     OR RoomTypeId  LIKE N'%' + @searchValue + '%'
 END
 GO
+
+
+CREATE PROCEDURE Pro_GetAllService
+AS
+BEGIN
+  SELECT *
+  FROM Service
+END
+GO
+
+CREATE PROCEDURE Proc_InsertService
+  @nameService NVARCHAR(100),
+  @price int
+AS
+BEGIN
+  INSERT INTO Service
+    (NameService,Price)
+  VALUES(@nameService, @price )
+END
+GO
+
+CREATE PROCEDURE Proc_DeleteService
+  @serviceId INT
+AS
+BEGIN
+Delete from BillInfo where ServiceId = @serviceId
+Delete from Service where ServiceId = @serviceId
+END
+GO
+
+CREATE PROCEDURE Proc_UpdateService
+@serviceId int,
+@nameService NVARCHAR(100),
+@price int
+AS
+BEGIN
+  UPDATE Service
+  SET NameService = @nameService,
+  Price = @price
+  WHERE ServiceId = @serviceId
+END
+GO
+
+CREATE PROCEDURE Proc_SearchService
+  @searchValue NVARCHAR(200)
+AS
+BEGIN
+  SELECT *
+  FROM Room
+  WHERE NameRoom LIKE N'%' + @searchValue + '%'
+    OR Status LIKE N'%' + @searchValue + '%'
+    OR RoomTypeId  LIKE N'%' + @searchValue + '%'
+END
+GO
+
