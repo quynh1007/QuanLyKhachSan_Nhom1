@@ -46,12 +46,10 @@ namespace QLKS_NHOM1.DAO
 
             return result > 0;
         }
-
-
         public List<Service> Search(string searchValue)
         {
             List<Service> list = new List<Service>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("Proc_SeacrchService @searchValue ", new object[] { searchValue });
+            DataTable data = DataProvider.Instance.ExecuteQuery("Proc_SearchService @searchValue ", new object[] { searchValue });
             foreach (DataRow item in data.Rows)
             {
                 Service entry = new Service(item);

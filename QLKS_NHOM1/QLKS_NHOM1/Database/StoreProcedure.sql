@@ -167,10 +167,79 @@ CREATE PROCEDURE Proc_SearchService
 AS
 BEGIN
   SELECT *
-  FROM Room
-  WHERE NameRoom LIKE N'%' + @searchValue + '%'
-    OR Status LIKE N'%' + @searchValue + '%'
-    OR RoomTypeId  LIKE N'%' + @searchValue + '%'
+  FROM Service
+  WHERE NameService LIKE N'%' + @searchValue + '%'
+    OR Price LIKE N'%' + @searchValue + '%'
 END
 GO
 
+
+CREATE PROCEDURE Proc_GetAllBill
+AS
+BEGIN
+  SELECT *
+  FROM Bill
+END
+GO
+
+CREATE PROCEDURE Proc_InsertBill
+  @customerId int,
+  @dateCheckIn date,
+  @dateCheckOut date,
+  @roomId int,
+  @status int
+AS
+BEGIN
+  INSERT INTO Bill
+    (CustomerId,DateCheckIn,DateCheckOut,RoomId,Status)
+  VALUES(@customerId, @dateCheckIn,@dateCheckOut,@roomId,@status )
+END
+GO
+
+CREATE PROCEDURE Proc_DeleteBill
+  @billId int
+AS
+BEGIN
+Delete from Bill where BillId = @billId
+END
+GO
+
+CREATE PROCEDURE Proc_UpdateBill
+  @billId int,
+  @customerId int,
+  @dateCheckIn date,
+  @dateCheckOut date,
+  @roomId int,
+  @status int
+AS
+BEGIN
+  UPDATE Bill
+  SET CustomerId = @customerId,
+  DateCheckIn = @dateCheckIn,
+  DateCheckOut = @dateCheckOut,
+  RoomId = @roomId,
+  Status = @status
+  WHERE BillId = @billId
+END
+GO
+
+CREATE PROCEDURE Proc_SearchBill
+  @searchValue NVARCHAR(200)
+AS
+BEGIN
+  SELECT *
+  FROM Bill
+  WHERE Status LIKE N'%' + @searchValue + '%'
+    OR RoomId LIKE N'%' + @searchValue + '%'
+	Or CustomerId LIKE N'%' + @searchValue + '%'
+    OR BillId LIKE N'%' + @searchValue + '%'
+END
+GO
+
+CREATE PROCEDURE Proc_GetAllCustomer
+AS
+BEGIN
+  SELECT *
+  FROM Customer
+END
+GO
