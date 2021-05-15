@@ -28,9 +28,9 @@ namespace QLKS_NHOM1.Models
             this.DateCheckOut = DateTime.Parse(dataRow["DateCheckOut"].ToString());
             this.RoomId = Int32.Parse(dataRow["RoomId"].ToString());
             this.Status = Int32.Parse(dataRow["Status"].ToString());
-           
-            
-           
+
+
+
         }
     }
 }

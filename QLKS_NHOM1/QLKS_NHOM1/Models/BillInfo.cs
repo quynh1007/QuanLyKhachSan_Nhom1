@@ -12,11 +12,11 @@ namespace QLKS_NHOM1.Models
         public int BillInfoId { set; get; }
         public int BillId { set; get; }
         public int ServiceId { set; get; }
-        
+
         public int IntCount { set; get; }
 
         public DateTime DateService { set; get; }
-     
+
 
         public BillInfo() { }
         public BillInfo(DataRow dataRow)

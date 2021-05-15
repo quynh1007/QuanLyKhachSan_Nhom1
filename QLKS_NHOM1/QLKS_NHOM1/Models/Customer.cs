@@ -16,7 +16,7 @@ namespace QLKS_NHOM1.Models
         public string AddressCustomer { set; get; }
         public string IdCardCustomer { set; get; }
         public string PhoneNumber { set; get; }
-       
+
 
         public Customer() { }
         public Customer(DataRow dataRow)
