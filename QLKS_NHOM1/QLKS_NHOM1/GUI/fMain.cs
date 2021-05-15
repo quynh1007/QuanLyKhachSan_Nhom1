@@ -22,7 +22,7 @@ namespace QLKS_NHOM1.GUI
 
         }
 
-        private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
