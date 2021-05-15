@@ -17,7 +17,7 @@ namespace QLKS_NHOM1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fBill());
+            Application.Run(new fBillInfo());
         }
     }
 }

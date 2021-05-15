@@ -1,4 +1,4 @@
----RoomType
+﻿---RoomType
 
 CREATE PROCEDURE SP_RoomType_GetAll
 AS
@@ -121,7 +121,7 @@ END
 GO
 
 
-CREATE PROCEDURE Pro_GetAllService
+CREATE PROCEDURE Proc_GetAllService
 AS
 BEGIN
   SELECT *
@@ -241,5 +241,86 @@ AS
 BEGIN
   SELECT *
   FROM Customer
+END
+GO
+--Long
+--Thêm billinfo mới sau khi thêm bill
+CREATE TRIGGER AddNewBillInfo
+ON Bill AFTER INSERT
+AS
+BEGIN
+	DECLARE @BillId INT;
+	SET @BillId=(SELECT BillId FROM INSERTED)
+	
+	DECLARE @RoomId INT;
+	SET @RoomId=(SELECT RoomId FROM INSERTED)
+
+	Declare @RoomPrice int;
+	Set @RoomPrice=(Select Price from RoomType as rt,Room as r where RoomId=@RoomId and r.RoomTypeId=rt.RoomTypeId)
+
+	Insert into BillInfo(BillId,IntCount,DateService)
+	values(@BillId,@RoomPrice,GETDATE())
+END
+GO
+
+--update tong tien khi thay doi service
+CREATE TRIGGER UpdateIntCount
+ON BillInfo instead of Update
+AS
+BEGIN
+	DECLARE @ServicePriceAfter INT;
+	SET @ServicePriceAfter=(SELECT Price FROM INSERTED as ist,Service as sv where ist.ServiceId=sv.ServiceId)
+	
+	DECLARE @ServicePriceBefore INT;
+	SET @ServicePriceBefore=(SELECT Price FROM deleted as del,Service as sv where del.ServiceId=sv.ServiceId)
+
+	Declare @ServiceId int;
+	set @ServiceId=(Select ServiceId from inserted)
+	Declare @BillInfoId int;
+	set @BillInfoId=(Select BillInfoId from inserted)
+	Declare @DateService date;
+	set @DateService=(Select DateService from inserted)
+
+	update BillInfo
+	set
+	serviceId = @ServiceId,
+	dateService= @DateService,
+	IntCount=IntCount+(@ServicePriceAfter-@ServicePriceBefore)
+	where BillInfoId=@BillInfoId
+END
+GO
+--Lấy tất cả billInfo
+CREATE PROCEDURE Proc_GetAllBillInfo
+AS
+BEGIN
+  SELECT *
+  FROM BillInfo
+END
+GO
+--Cập nhật billinfo
+CREATE PROCEDURE Proc_UpdateBillInfo
+  @billInfoId int,
+  @serviceId int,
+  @dateService date
+AS
+BEGIN
+  UPDATE BillInfo
+  SET ServiceId = @serviceId,
+  DateService = @dateService
+  WHERE BillInFoId = @billInfoId
+END
+GO
+--Tìm kiếm billinfo
+CREATE PROCEDURE Proc_SearchBillInfo
+  @searchValue NVARCHAR(200)
+AS
+BEGIN
+  SELECT *
+  FROM BillInFo
+  WHERE BillInfoId LIKE N'%' + @searchValue + '%'
+    OR BillId LIKE N'%' + @searchValue + '%'
+	Or ServiceId LIKE N'%' + @searchValue + '%'
+    OR IntCount LIKE N'%' + @searchValue + '%'
+	OR DateService LIKE N'%' + @searchValue + '%'
 END
 GO

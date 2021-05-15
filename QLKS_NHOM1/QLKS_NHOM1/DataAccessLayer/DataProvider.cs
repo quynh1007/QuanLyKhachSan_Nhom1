@@ -12,10 +12,10 @@ namespace QLKS_NHOM1.DataAccessLayer
     {
         private static DataProvider instance; // Ctrl + R + E
 
-         // private string connectionString = "Data Source=QUYNH\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
-       
+        // private string connectionString = "Data Source=QUYNH\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+
         //private string connectionString = "Data Source= DESKTOP-6E6UK3P;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
-        private string connectionString = "Server=DESKTOP-6N6LFDC\\SQLEXPRESS;Database=QuanLyKhachSan;User ID=nhom1;pwd=nhom1";
+        private string connectionString = "Data Source=.;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
