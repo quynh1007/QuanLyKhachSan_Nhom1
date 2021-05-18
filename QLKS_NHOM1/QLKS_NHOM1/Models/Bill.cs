@@ -11,9 +11,9 @@ namespace QLKS_NHOM1.Models
     {
         public int BillId { set; get; }
         public int CustomerId { set; get; }
-        public DateTime? DateCheckIn { set; get; }
+        public DateTime DateCheckIn { set; get; }
 
-        public DateTime? DateCheckOut { set; get; }
+        public DateTime DateCheckOut { set; get; }
         public int RoomId { set; get; }
 
         public int Status { set; get; }
@@ -25,12 +25,12 @@ namespace QLKS_NHOM1.Models
             this.BillId = Int32.Parse(dataRow["BillId"].ToString());
             this.CustomerId = Int32.Parse(dataRow["CustomerId"].ToString());
             this.DateCheckIn = DateTime.Parse(dataRow["DateCheckIn"].ToString());
-            this.DateCheckOut = this.DateCheckOut == null ? (DateTime?)null : DateTime.Parse(dataRow["DateCheckOut"].ToString());
+            this.DateCheckOut = DateTime.Parse(dataRow["DateCheckOut"].ToString());
             this.RoomId = Int32.Parse(dataRow["RoomId"].ToString());
             this.Status = Int32.Parse(dataRow["Status"].ToString());
-           
-            
-           
+
+
+
         }
     }
 }

@@ -11,11 +11,11 @@ namespace QLKS_NHOM1.Models
     {
         public int RoomId { set; get; }
         public string NameRoom { set; get; }
-     
+
         public int Status { set; get; }
-       
+
         public int RoomTypeId { set; get; }
-      
+
         public Room() { }
         public Room(DataRow dataRow)
         {
