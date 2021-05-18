@@ -87,7 +87,6 @@
             this.quảnLýNhânViênToolStripMenuItem.Name = "quảnLýNhânViênToolStripMenuItem";
             this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
             this.quảnLýNhânViênToolStripMenuItem.Text = "Quản Lý Loại Phòng";
-            this.quảnLýNhânViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNhânViênToolStripMenuItem_Click);
             // 
             // hướngDẫnToolStripMenuItem
             // 
