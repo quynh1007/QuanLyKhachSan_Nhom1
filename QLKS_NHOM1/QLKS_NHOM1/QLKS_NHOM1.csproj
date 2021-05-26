@@ -72,6 +72,12 @@
     <Compile Include="GUI\fBillInfo.Designer.cs">
       <DependentUpon>fBillInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fInstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fInstructions.Designer.cs">
+      <DependentUpon>fInstructions.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <EmbeddedResource Include="GUI\fBillInfo.resx">
       <DependentUpon>fBillInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fInstructions.resx">
+      <DependentUpon>fInstructions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +175,35 @@
     <Content Include="Database\database.sql" />
     <Content Include="Database\diagram.PNG" />
     <Content Include="Database\StoreProcedure.sql" />
+    <Content Include="Images\anh1.PNG" />
+    <None Include="Images\anh30.PNG" />
+    <None Include="Images\anh29.PNG" />
+    <None Include="Images\anh28.PNG" />
+    <None Include="Images\anh27.PNG" />
+    <None Include="Images\anh26.PNG" />
+    <None Include="Images\anh25.PNG" />
+    <None Include="Images\anh23.PNG" />
+    <None Include="Images\anh22.PNG" />
+    <None Include="Images\anh21.PNG" />
+    <None Include="Images\anh20.PNG" />
+    <None Include="Images\anh19.PNG" />
+    <None Include="Images\anh18.PNG" />
+    <None Include="Images\anh17.PNG" />
+    <None Include="Images\anh13.PNG" />
+    <None Include="Images\anh16.PNG" />
+    <None Include="Images\anh15.PNG" />
+    <None Include="Images\anh14.PNG" />
+    <None Include="Images\anh12.PNG" />
+    <None Include="Images\anh11.PNG" />
+    <None Include="Images\anh10.PNG" />
+    <None Include="Images\anh9.PNG" />
+    <None Include="Images\anh8.PNG" />
+    <None Include="Images\anh7.PNG" />
+    <None Include="Images\anh6.PNG" />
+    <None Include="Images\anh5.PNG" />
+    <None Include="Images\anh4.PNG" />
+    <None Include="Images\anh3.PNG" />
+    <None Include="Images\anh2.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
