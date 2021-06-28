@@ -399,3 +399,11 @@ BEGIN
 	OR DateService LIKE N'%' + @searchValue + '%'
 END
 GO
+--login
+CREATE PROC Login
+@username nvarchar(50), @pass nvarchar(50)
+AS
+BEGIN
+	SELECT * FROM dbo.Account WHERE UserName = @username AND PassWord = @pass
+END
+GO

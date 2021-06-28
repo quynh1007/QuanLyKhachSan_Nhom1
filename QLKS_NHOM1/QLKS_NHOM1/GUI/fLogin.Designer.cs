@@ -44,6 +44,7 @@
             this.btnDangNhap.TabIndex = 0;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // label1
             // 
@@ -77,6 +78,7 @@
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label3
             // 
@@ -101,6 +103,7 @@
             this.Controls.Add(this.btnDangNhap);
             this.Name = "fLogin";
             this.Text = "fLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

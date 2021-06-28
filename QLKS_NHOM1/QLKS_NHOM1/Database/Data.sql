@@ -10,6 +10,7 @@ INSERT INTO RoomType ([RoomTypeId], [NameType], [Price]) Values (2, N'Phòng th�
 INSERT INTO RoomType ([RoomTypeId], [NameType], [Price]) Values (3, N'Phòng thương gia', 400000)
 INSERT INTO RoomType ([RoomTypeId], [NameType], [Price]) Values (4, N'Phòng đôi', 180000)
 INSERT INTO RoomType ([RoomTypeId], [NameType], [Price]) Values (5, N'Phòng ba', 200000)
+INSERT INTO RoomType ([RoomTypeId], [NameType], [Price]) Values (6, N'Phòng Nhóm', 200000)
 SET IDENTITY_INSERT [dbo].[RoomType] OFF
 GO
 --------------------------Thêm dữ liệu vào bảng phòng ------------------------
@@ -42,7 +43,19 @@ INSERT INTO Customer ( [NameCustomer], [DateTimeCustomer], [GenderCustomer], [Ad
 VALUES (N'Nguyễn Văn C', '22/08/1996', N'Nam', N'Bạc Liêu', '385758659', '0964423435')
 GO
 INSERT INTO Customer ([NameCustomer], [DateTimeCustomer], [GenderCustomer], [AddressCustomer], [IdCardCustomer], [PhoneNumber])
-VALUES (N'Nguyễn Thị Bông', '14/06/1994', N'Nữ', N'Bạc Liêu', '385758634', '0964234432')
+VALUES (N'Nguyễn Thị Bông', '14/06/1991', N'Nữ', N'Hà Nội', '385758634', '0964234432')
+GO
+INSERT INTO Customer ([NameCustomer], [DateTimeCustomer], [GenderCustomer], [AddressCustomer], [IdCardCustomer], [PhoneNumber])
+VALUES (N'Nguyễn Thị Hạnh', '30/06/1993', N'Nữ', N'Bạc Liêu', '385758634', '0964234432')
+GO
+INSERT INTO Customer ([NameCustomer], [DateTimeCustomer], [GenderCustomer], [AddressCustomer], [IdCardCustomer], [PhoneNumber])
+VALUES (N'Nguyễn Thị Hường', '10/06/1995', N'Nữ', N'Hà Nam', '385758634', '0964234432')
+GO
+INSERT INTO Customer ([NameCustomer], [DateTimeCustomer], [GenderCustomer], [AddressCustomer], [IdCardCustomer], [PhoneNumber])
+VALUES (N'Nguyễn Thị Hoa', '14/06/1998', N'Nữ', N'Bắc Ninh', '385758634', '0964234432')
+GO
+INSERT INTO Customer ([NameCustomer], [DateTimeCustomer], [GenderCustomer], [AddressCustomer], [IdCardCustomer], [PhoneNumber])
+VALUES (N'Nguyễn Văn Hùng', '14/12/2000', N'Nam', N'Bạc Liêu', '385758634', '0964234432')
 GO
 SELECT * FROM Customer
 GO
@@ -67,9 +80,9 @@ GO
 ------------------------Thêm dữ liệu vào bảng Bill ------------------
 
 SET IDENTITY_INSERT [dbo].[Bill] ON
-INSERT INTO Bill ([BillId],[CustomerId], [DateCheckIn], [DateCheckOut], [RoomId], [Status])  Values (1, 1, GETDATE(), NULl,  1, 0)
+INSERT INTO Bill ([BillId],[CustomerId], [DateCheckIn], [DateCheckOut], [RoomId], [Status])  Values (1, 1, GETDATE(), GETDATE(),  1, 0)
 INSERT INTO Bill ([BillId], [CustomerId], [DateCheckIn], [DateCheckOut], [RoomId], [Status])  Values (2, 2, GETDATE(), GETDATE(),  1, 1)
-INSERT INTO Bill ([BillId], [CustomerId], [DateCheckIn], [DateCheckOut], [RoomId], [Status])  Values (3, 3, GETDATE(), NULl,  7, 0)
+INSERT INTO Bill ([BillId], [CustomerId], [DateCheckIn], [DateCheckOut], [RoomId], [Status])  Values (3, 3, GETDATE(), GETDATE(),  7, 0)
 SET IDENTITY_INSERT [dbo].[Bill] OFF
 GO
 INSERT INTO Bill ([CustomerId], [DateCheckIn], [DateCheckOut], [RoomId], [Status])  
@@ -87,6 +100,9 @@ SET IDENTITY_INSERT [dbo].[BillInfo] ON
 INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (1, 1, 1, 1, GETDATE())
 INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (2, 2, 6, 1, GETDATE())
 INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (3, 2, 3, 1, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
 INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
 SET IDENTITY_INSERT [dbo].[BillInfo] OFF
 GO

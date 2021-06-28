@@ -29,5 +29,57 @@ namespace QLKS_NHOM1.GUI
             frm.ShowDialog();
             this.Show();
         }
+
+        private void quảnLýPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fRoom frm = new fRoom();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void quảnLýDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fService frm = new fService();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fBill frm = new fBill();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+       
+
+        private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fInstructions frm = new fInstructions();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+       
+
+        private void quanlyloaiphongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fRoomType frm = new fRoomType();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btndangxuat_Click(object sender, EventArgs e)
+        {
+            fLogin frm = new fLogin();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

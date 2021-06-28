@@ -105,8 +105,8 @@ namespace QLKS_NHOM1.GUI
         {
             Bill bill = new Bill();
             bill.CustomerId = int.Parse(cb_Customer.SelectedItem.ToString());
-            bill.DateCheckIn = date_Checkin.Value;
-            bill.DateCheckOut = date_Checkout.Value;
+            bill.DateCheckIn = DateTime.Parse(date_Checkin.Value.ToString());
+            bill.DateCheckIn = DateTime.Parse(date_Checkout.Value.ToString());
             bill.RoomId = int.Parse(cb_Room.SelectedItem.ToString());
             bill.Status = int.Parse(txt_Status.Text);
             try
@@ -168,6 +168,14 @@ namespace QLKS_NHOM1.GUI
                 return;
             }
             ListBill.DataSource = BillDAO.Instance.Search(str);
+        }
+
+        private void btnxem_Click(object sender, EventArgs e)
+        {
+            fBillInfo frm = new fBillInfo();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }
