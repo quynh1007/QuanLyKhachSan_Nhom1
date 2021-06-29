@@ -95,5 +95,10 @@ namespace QLKS_NHOM1.GUI
                 listBillInfo.DataSource = BillInfoDAO.Instance.Search(search);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

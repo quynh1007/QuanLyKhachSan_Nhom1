@@ -219,7 +219,7 @@
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(617, 87);
+            this.groupBox2.Location = new System.Drawing.Point(543, 87);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(257, 196);
             this.groupBox2.TabIndex = 3;
@@ -291,16 +291,16 @@
             // dgvCustomer
             // 
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.Location = new System.Drawing.Point(72, 298);
+            this.dgvCustomer.Location = new System.Drawing.Point(12, 289);
             this.dgvCustomer.Name = "dgvCustomer";
-            this.dgvCustomer.Size = new System.Drawing.Size(743, 289);
+            this.dgvCustomer.Size = new System.Drawing.Size(788, 289);
             this.dgvCustomer.TabIndex = 4;
             // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 609);
+            this.ClientSize = new System.Drawing.Size(816, 609);
             this.Controls.Add(this.dgvCustomer);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
