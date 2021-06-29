@@ -99,11 +99,11 @@ GO
 SET IDENTITY_INSERT [dbo].[BillInfo] ON
 INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (1, 1, 1, 1, GETDATE())
 INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (2, 2, 6, 1, GETDATE())
-INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (3, 2, 3, 1, GETDATE())
-INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
-INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
-INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
-INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 2, 2, 4, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (3, 3, 3, 1, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (4, 1, 4, 4, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (5, 2, 5, 4, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (6, 3, 6, 4, GETDATE())
+INSERT INTO BillInfo ([BillInfoId], [BillId], [ServiceId], [IntCount], [DateService]) Values (7, 2, 7, 4, GETDATE())
 SET IDENTITY_INSERT [dbo].[BillInfo] OFF
 GO
 INSERT INTO BillInfo ([BillId], [ServiceId], [intCount], [DateService]) Values (1, 2, 4, GETDATE())

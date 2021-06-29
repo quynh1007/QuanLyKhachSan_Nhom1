@@ -47,7 +47,6 @@ namespace QLKS_NHOM1.GUI
             this.dgv_DanhSachBill = new System.Windows.Forms.DataGridView();
             this.txt_Status = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnxem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSachBill)).BeginInit();
             this.SuspendLayout();
@@ -246,15 +245,6 @@ namespace QLKS_NHOM1.GUI
             this.label2.TabIndex = 17;
             this.label2.Text = "Trạng thái";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnxem
             // 
             this.btnxem.Location = new System.Drawing.Point(380, 472);
@@ -271,7 +261,6 @@ namespace QLKS_NHOM1.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 507);
             this.Controls.Add(this.btnxem);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_Status);
             this.Controls.Add(this.dgv_DanhSachBill);
@@ -319,7 +308,6 @@ namespace QLKS_NHOM1.GUI
         private System.Windows.Forms.DataGridView dgv_DanhSachBill;
         private System.Windows.Forms.TextBox txt_Status;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnxem;
     }
 }
