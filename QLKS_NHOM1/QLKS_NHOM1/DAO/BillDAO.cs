@@ -36,7 +36,7 @@ namespace QLKS_NHOM1.DAO
         }
         public bool Update(Bill bill)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("Proc_UpdateBill @customerId , @dateCheckIn , @dateCheckOut , @roomId , @status ", new object[] { bill.CustomerId, bill.DateCheckIn, bill.DateCheckOut, bill.RoomId, bill.Status }); 
+            int result = DataProvider.Instance.ExecuteNonQuery("Proc_UpdateBill @billId , @customerId , @dateCheckIn , @dateCheckOut , @roomId , @status ", new object[] {bill.BillId, bill.CustomerId, bill.DateCheckIn, bill.DateCheckOut, bill.RoomId, bill.Status }); 
             return result > 0;
         }
 

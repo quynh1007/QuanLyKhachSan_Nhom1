@@ -105,8 +105,8 @@ namespace QLKS_NHOM1.GUI
         {
             Bill bill = new Bill();
             bill.CustomerId = int.Parse(cb_Customer.SelectedItem.ToString());
-            bill.DateCheckIn = DateTime.Parse(date_Checkin.Value.ToString());
-            bill.DateCheckIn = DateTime.Parse(date_Checkout.Value.ToString());
+            bill.DateCheckIn = date_Checkin.Value;
+            bill.DateCheckOut = date_Checkout.Value;
             bill.RoomId = int.Parse(cb_Room.SelectedItem.ToString());
             bill.Status = int.Parse(txt_Status.Text);
             try
@@ -138,6 +138,7 @@ namespace QLKS_NHOM1.GUI
             bill.DateCheckOut = date_Checkout.Value;
             bill.RoomId = int.Parse(cb_Room.SelectedItem.ToString());
             bill.Status = int.Parse(txt_Status.Text);
+            bill.BillId = int.Parse(txt_BillId.Text);
             try
             {
                 if (cb_Customer.SelectedItem.ToString().Trim() == ""
@@ -176,6 +177,24 @@ namespace QLKS_NHOM1.GUI
             this.Hide();
             frm.ShowDialog();
             this.Show();
+        }
+
+        private void MakeNull()
+        {
+            txt_Status.Text = "";
+            cb_Customer.Text = "";
+            cb_Room.Text = "";
+
+
+        }
+        private void btnLamTrong_Click(object sender, EventArgs e)
+        {
+            MakeNull();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadListBill();
         }
     }
 }

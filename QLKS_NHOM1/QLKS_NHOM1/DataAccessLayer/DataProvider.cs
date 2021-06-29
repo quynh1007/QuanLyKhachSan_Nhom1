@@ -14,7 +14,8 @@ namespace QLKS_NHOM1.DataAccessLayer
 
          // private string connectionString = "Data Source=QUYNH\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
        
-        private string connectionString = "Data Source=QUYNH\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        //private string connectionString = "Data Source=QUYNH\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        private string connectionString = "Server=DESKTOP-6N6LFDC\\SQLEXPRESS;Database=QuanLyKhachSan;User ID=nhom1;pwd=nhom1";
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
